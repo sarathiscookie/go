@@ -27,7 +27,7 @@ func main() {
 	fmt.Printf("Company Name %v total employees %v.\n\n", companyName, totalEmployees)*/
 
 	// -------------------- Pointer -------------------------
-	var firstName string
+	/*var firstName string
 	var lastName string
 	var email string
 	var userTickets uint
@@ -49,5 +49,11 @@ func main() {
 
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v \n\n", firstName, lastName, userTickets, email)
 
-	fmt.Printf("Remaining tickets are %v \n", remainTickets)
+	fmt.Printf("Remaining tickets are %v \n", remainTickets)*/
+
+	// Array
+	var vehicles []string
+	vehicles = append(vehicles, "Mercedes Benz", "Range Rover")
+
+	fmt.Printf("First value: %v\nArray type: %T\nArray length: %v\n", vehicles, vehicles, len(vehicles))
 }
