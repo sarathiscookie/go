@@ -1,7 +1,10 @@
 // Variables, Constants, Variables in strings, DataTypes
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	// Eg: Variables & Constants
@@ -52,8 +55,49 @@ func main() {
 	fmt.Printf("Remaining tickets are %v \n", remainTickets)*/
 
 	// Array
-	var vehicles []string
+	/*var vehicles []string
 	vehicles = append(vehicles, "Mercedes Benz", "Range Rover")
 
-	fmt.Printf("First value: %v\nArray type: %T\nArray length: %v\n", vehicles, vehicles, len(vehicles))
+	fmt.Printf("First value: %v\nArray type: %T\nArray length: %v\n", vehicles, vehicles, len(vehicles))*/
+
+	// Loops in GO (for and foreach)
+	var remainingSeats uint = 50
+	var userNames []string
+
+	for {
+		var firstName string
+		var lastName string
+		var email string
+		var ticketsBooked uint
+		var firstNames []string
+		
+		fmt.Printf("Enter your first name: \n")
+		fmt.Scan(&firstName)
+
+		fmt.Printf("Enter your last name: \n")
+		fmt.Scan(&lastName)
+
+		fmt.Printf("Enter your email: \n")
+		fmt.Scan(&email)
+
+		fmt.Printf("Enter not of tickets: \n")
+		fmt.Scan(&ticketsBooked)
+
+		fmt.Printf("%v %v, Welcome to ticket booking system. Thank you for booking your tickets. No of bookings %v \n", firstName, lastName, ticketsBooked)
+
+		remainingSeats = remainingSeats - ticketsBooked
+		
+		userNames = append(userNames, firstName + " " + lastName)
+
+		fmt.Printf("Remaining tickets are %v \n", remainingSeats)
+		
+		fmt.Printf("You will get email confirmation on your email id %v \n", email)
+
+		for _, userName := range userNames {
+			var names = strings.Fields(userName)
+			firstNames = append(firstNames, names[0])
+		}
+
+		fmt.Printf("User  are %v \n", firstNames)
+	}
 }
