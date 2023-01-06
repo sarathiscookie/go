@@ -61,6 +61,7 @@ func main() {
 	fmt.Printf("First value: %v\nArray type: %T\nArray length: %v\n", vehicles, vehicles, len(vehicles))*/
 
 	// Loops in GO (for and foreach)
+	// if else continue break
 	var remainingSeats uint = 50
 	var userNames []string
 
@@ -70,7 +71,7 @@ func main() {
 		var email string
 		var ticketsBooked uint
 		var firstNames []string
-		
+
 		fmt.Printf("Enter your first name: \n")
 		fmt.Scan(&firstName)
 
@@ -80,14 +81,24 @@ func main() {
 		fmt.Printf("Enter your email: \n")
 		fmt.Scan(&email)
 
-		fmt.Printf("Enter not of tickets: \n")
+		fmt.Printf("Enter no of tickets: \n")
 		fmt.Scan(&ticketsBooked)
 
-		fmt.Printf("%v %v, Welcome to ticket booking system. Thank you for booking your tickets. No of bookings %v \n", firstName, lastName, ticketsBooked)
+		if ticketsBooked > remainingSeats {
+			fmt.Printf("We only have %v tickets remaining, so you can't book %v \n", remainingSeats, ticketsBooked)
+			continue
+		}
 
 		remainingSeats = remainingSeats - ticketsBooked
-		
+
 		userNames = append(userNames, firstName + " " + lastName)
+
+		if remainingSeats == 0 {
+			fmt.Printf("Seats are booked out. Come back next year. \n")
+			break
+		}
+
+		fmt.Printf("%v %v, Welcome to ticket booking system. Thank you for booking your tickets. No of bookings %v \n", firstName, lastName, ticketsBooked)
 
 		fmt.Printf("Remaining tickets are %v \n", remainingSeats)
 		
@@ -98,6 +109,7 @@ func main() {
 			firstNames = append(firstNames, names[0])
 		}
 
-		fmt.Printf("User  are %v \n", firstNames)
+		fmt.Printf("The first names of bookings are %v \n", firstNames)
 	}
+
 }
