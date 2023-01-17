@@ -84,6 +84,20 @@ func main() {
 		fmt.Printf("Enter no of tickets: \n")
 		fmt.Scan(&ticketsBooked)
 
+		isValidName := len(firstName) >= 2 && len(lastName) >= 2
+		isValidEmail := strings.Contains(email, "@")
+		isValidBooking := ticketsBooked > 0
+
+		if isValidName == false {
+			fmt.Println("First name and Last name must be minimum 2 letters.")
+			break
+		}
+
+		if !isValidEmail {
+			fmt.Println("Enter valid email address.")
+			break
+		}
+
 		if ticketsBooked > remainingSeats {
 			fmt.Printf("We only have %v tickets remaining, so you can't book %v \n", remainingSeats, ticketsBooked)
 			continue
@@ -93,23 +107,23 @@ func main() {
 
 		userNames = append(userNames, firstName + " " + lastName)
 
-		if remainingSeats == 0 {
-			fmt.Printf("Seats are booked out. Come back next year. \n")
+		if remainingSeats > 0 && isValidBooking == true {
+			fmt.Printf("%v %v, Welcome to ticket booking system. Thank you for booking your tickets. No of bookings %v \n", firstName, lastName, ticketsBooked)
+
+			fmt.Printf("Remaining tickets are %v \n", remainingSeats)
+			
+			fmt.Printf("You will get email confirmation on your email id %v \n", email)
+
+			for _, userName := range userNames {
+				var names = strings.Fields(userName)
+				firstNames = append(firstNames, names[0])
+			}
+
+			fmt.Printf("The first names of bookings are %v \n", firstNames)
+		} else {
+			fmt.Printf("Whoops! Check booking count or Seats are booked out. Come back next year. \n")
 			break
 		}
-
-		fmt.Printf("%v %v, Welcome to ticket booking system. Thank you for booking your tickets. No of bookings %v \n", firstName, lastName, ticketsBooked)
-
-		fmt.Printf("Remaining tickets are %v \n", remainingSeats)
-		
-		fmt.Printf("You will get email confirmation on your email id %v \n", email)
-
-		for _, userName := range userNames {
-			var names = strings.Fields(userName)
-			firstNames = append(firstNames, names[0])
-		}
-
-		fmt.Printf("The first names of bookings are %v \n", firstNames)
-	}
+	} 
 
 }
