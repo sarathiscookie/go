@@ -3,7 +3,7 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	/*"strings"*/
 )
 
 func main() {
@@ -62,7 +62,7 @@ func main() {
 
 	// Loops in GO (for and foreach)
 	// if else continue break
-	var remainingSeats uint = 50
+	/*var remainingSeats uint = 50
 	var userNames []string
 
 	for {
@@ -124,6 +124,19 @@ func main() {
 			fmt.Printf("Whoops! Check booking count or Seats are booked out. Come back next year. \n")
 			break
 		}
-	} 
+	}*/
 
+	// Switch
+	var city string
+	fmt.Printf("Enter your city: \n")
+	fmt.Scan(&city)
+
+	switch city {
+	case "Newyork":
+		fmt.Printf("Your native city is %v", city)
+	case "London", "Berlin":
+		fmt.Printf("Your native city is %v", city)
+    default:
+		fmt.Println("Sorry your city is not in our list.")		
+	}
 }
