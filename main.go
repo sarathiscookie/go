@@ -3,7 +3,7 @@ package main
 
 import (
 	"fmt"
-	/*"strings"*/
+	"strings"
 )
 
 func main() {
@@ -54,39 +54,21 @@ func main() {
 
 	fmt.Printf("Remaining tickets are %v \n", remainTickets)*/
 
-	// Array
+	// --------------------- Array ------------------------------
 	/*var vehicles []string
 	vehicles = append(vehicles, "Mercedes Benz", "Range Rover")
 
 	fmt.Printf("First value: %v\nArray type: %T\nArray length: %v\n", vehicles, vehicles, len(vehicles))*/
 
-	// Loops in GO (for and foreach)
-	// if else continue break
-	/*var remainingSeats uint = 50
+	// ------------ Loops in GO (for and foreach) ------------
+	// ------------ if else continue break -----------
+	var remainingSeats uint = 50
 	var userNames []string
 
 	for {
-		var firstName string
-		var lastName string
-		var email string
-		var ticketsBooked uint
-		var firstNames []string
+		firstName, lastName, email, ticketsBooked := getUserInputs()
 
-		fmt.Printf("Enter your first name: \n")
-		fmt.Scan(&firstName)
-
-		fmt.Printf("Enter your last name: \n")
-		fmt.Scan(&lastName)
-
-		fmt.Printf("Enter your email: \n")
-		fmt.Scan(&email)
-
-		fmt.Printf("Enter no of tickets: \n")
-		fmt.Scan(&ticketsBooked)
-
-		isValidName := len(firstName) >= 2 && len(lastName) >= 2
-		isValidEmail := strings.Contains(email, "@")
-		isValidBooking := ticketsBooked > 0
+		isValidName, isValidEmail, isValidBooking := validateUserInput (firstName, lastName, email, ticketsBooked)
 
 		if isValidName == false {
 			fmt.Println("First name and Last name must be minimum 2 letters.")
@@ -114,20 +96,17 @@ func main() {
 			
 			fmt.Printf("You will get email confirmation on your email id %v \n", email)
 
-			for _, userName := range userNames {
-				var names = strings.Fields(userName)
-				firstNames = append(firstNames, names[0])
-			}
+			userFirstNames := getFirstNames(userNames)
 
-			fmt.Printf("The first names of bookings are %v \n", firstNames)
+			fmt.Printf("The first names of bookings are %v \n", userFirstNames)
 		} else {
 			fmt.Printf("Whoops! Check booking count or Seats are booked out. Come back next year. \n")
 			break
 		}
-	}*/
+	}
 
-	// Switch
-	var city string
+	// --------------- Switch --------------
+	/*var city string
 	fmt.Printf("Enter your city: \n")
 	fmt.Scan(&city)
 
@@ -138,5 +117,45 @@ func main() {
 		fmt.Printf("Your native city is %v", city)
     default:
 		fmt.Println("Sorry your city is not in our list.")		
+	}*/
+}
+
+func getUserInputs() (string, string, string, uint) {
+	var firstName string
+	var lastName string
+	var email string
+	var ticketsBooked uint
+
+	fmt.Printf("Enter your first name: \n")
+	fmt.Scan(&firstName)
+
+	fmt.Printf("Enter your last name: \n")
+	fmt.Scan(&lastName)
+
+	fmt.Printf("Enter your email: \n")
+	fmt.Scan(&email)
+
+	fmt.Printf("Enter no of tickets: \n")
+	fmt.Scan(&ticketsBooked)
+
+	return firstName, lastName, email, ticketsBooked
+}
+
+func validateUserInput(firstName string, lastName string, email string, ticketsBooked uint) (bool, bool, bool) {
+	isValidName := len(firstName) >= 2 && len(lastName) >= 2
+	isValidEmail := strings.Contains(email, "@")
+	isValidBooking := ticketsBooked > 0
+
+	return isValidName, isValidEmail, isValidBooking
+}
+
+func getFirstNames(userNames []string) ([]string) {
+	firstNames := []string {}
+
+	for _, userName := range userNames {
+		var names = strings.Fields(userName)
+		firstNames = append(firstNames, names[0])
 	}
+
+	return firstNames
 }
