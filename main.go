@@ -1,9 +1,9 @@
-// Variables, Constants, Variables in strings, DataTypes
 package main
 
 import (
 	"fmt"
 	"strings"
+	"golang-app/validation"
 )
 
 func main() {
@@ -68,7 +68,7 @@ func main() {
 	for {
 		firstName, lastName, email, ticketsBooked := getUserInputs()
 
-		isValidName, isValidEmail, isValidBooking := validateUserInput (firstName, lastName, email, ticketsBooked)
+		isValidName, isValidEmail, isValidBooking := userValidator.ValidateUserInput (firstName, lastName, email, ticketsBooked)
 
 		if isValidName == false {
 			fmt.Println("First name and Last name must be minimum 2 letters.")
