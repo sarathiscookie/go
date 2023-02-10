@@ -141,14 +141,6 @@ func getUserInputs() (string, string, string, uint) {
 	return firstName, lastName, email, ticketsBooked
 }
 
-func validateUserInput(firstName string, lastName string, email string, ticketsBooked uint) (bool, bool, bool) {
-	isValidName := len(firstName) >= 2 && len(lastName) >= 2
-	isValidEmail := strings.Contains(email, "@")
-	isValidBooking := ticketsBooked > 0
-
-	return isValidName, isValidEmail, isValidBooking
-}
-
 func getFirstNames(userNames []string) ([]string) {
 	firstNames := []string {}
 
