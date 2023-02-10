@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"strings"
 	"golang-app/validation"
+	"strings"
+	"time"
 )
 
 func main() {
@@ -96,6 +97,8 @@ func main() {
 			
 			fmt.Printf("You will get email confirmation on your email id %v \n", email)
 
+			go sendTickets(firstName, lastName, email, ticketsBooked)
+
 			userFirstNames := getFirstNames(userNames)
 
 			fmt.Printf("The first names of bookings are %v \n", userFirstNames)
@@ -150,4 +153,11 @@ func getFirstNames(userNames []string) ([]string) {
 	}
 
 	return firstNames
+}
+
+func sendTickets(firstName string, lastName string, email string, ticketsBooked uint) {
+	time.Sleep(50 * time.Second)
+	fmt.Printf("######## Email received ######### \n")
+	fmt.Printf("%v tickets booked for %v %v \n", ticketsBooked, firstName, lastName)
+	fmt.Printf("################################### \n")
 }
