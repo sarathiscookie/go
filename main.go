@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
+	/*"fmt"
 	"golang-app/validation"
 	"strings"
-	"time"
+	"time"*/
 )
 
 func main() {
@@ -63,7 +63,7 @@ func main() {
 
 	// ------------ Loops in GO (for and foreach) ------------
 	// ------------ if else continue break -----------
-	var remainingSeats uint = 50
+	/*var remainingSeats uint = 50
 	var userNames []string
 
 	for {
@@ -106,7 +106,7 @@ func main() {
 			fmt.Printf("Whoops! Check booking count or Seats are booked out. Come back next year. \n")
 			break
 		}
-	}
+	} */
 
 	// --------------- Switch --------------
 	/*var city string
@@ -123,7 +123,7 @@ func main() {
 	}*/
 }
 
-func getUserInputs() (string, string, string, uint) {
+/*func getUserInputs() (string, string, string, uint) {
 	var firstName string
 	var lastName string
 	var email string
@@ -161,3 +161,4 @@ func sendTickets(firstName string, lastName string, email string, ticketsBooked 
 	fmt.Printf("%v tickets booked for %v %v \n", ticketsBooked, firstName, lastName)
 	fmt.Printf("################################### \n")
 }
+*/
