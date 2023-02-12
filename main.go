@@ -1,10 +1,7 @@
 package main
 
 func main() {
-	cards := deck {
-		"Ace",
-		"Diamond",
-	}
+	cards := newDeck()
 
 	cards.list()
 }
