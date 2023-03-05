@@ -1,7 +1,10 @@
 package main
 
 func main() {
-	cards := newDeck()
+	//cards := newDeck()
+	vehicles := vehicle()
+	first, second := multipleReturn(vehicles, 1)
 
-	cards.list()
+	first.result()
+	second.result()
 }
