@@ -1,10 +1,13 @@
 package main
 
-func main() {
-	//cards := newDeck()
-	vehicles := vehicle()
-	first, second := multipleReturn(vehicles, 1)
+import (
+	"path"
+	"fmt"
+)
 
-	first.result()
-	second.result()
+func main() {
+	var dir, file string
+	dir, file = path.Split("css/main.css")
+	fmt.Println("dir:", dir)
+	fmt.Println("file:", file)
 }
