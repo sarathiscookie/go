@@ -1,13 +1,18 @@
 package main
 
 import (
-	"path"
 	"fmt"
 )
 
 func main() {
-	var dir, file string
-	dir, file = path.Split("css/main.css")
-	fmt.Println("dir:", dir)
-	fmt.Println("file:", file)
+	const (
+		monday = iota + 1
+		tuesday = iota + 1
+		wednesday = iota + 1
+		thursday = iota + 1
+		friday = iota + 1
+		saturday = iota + 1
+		sunday = iota + 1
+	)
+	fmt.Println(monday, tuesday, wednesday, thursday, friday, saturday, sunday)
 }
