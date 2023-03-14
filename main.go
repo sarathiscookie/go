@@ -6,13 +6,16 @@ import (
 
 func main() {
 	const (
-		monday = iota + 1
-		tuesday = iota + 1
-		wednesday = iota + 1
-		thursday = iota + 1
-		friday = iota + 1
-		saturday = iota + 1
-		sunday = iota + 1
+		spring = iota + 3 //3
+		_ //4
+		_ //5
+		summer = iota + 3 //6
+		_ //7
+		_ //8
+		fall = iota + 3 //9
+		_ //10
+		_ //11
+		winter = iota + 3 //12
 	)
-	fmt.Println(monday, tuesday, wednesday, thursday, friday, saturday, sunday)
+	fmt.Println(winter, spring, summer, fall)
 }
