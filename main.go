@@ -54,4 +54,24 @@ func main() {
 		cc3               // -5
 	)	
 	fmt.Println(cc1, cc2, cc3)
+
+	// Typed and Untyped constant
+	const val1 = 5
+	const val2 float64 = 6.25
+	fmt.Println(val1 * val2)
+
+	// Array
+	var ar = [4]int{120, 300, -45, 250}
+	fmt.Printf("%T \n", ar)
+
+	// Slice
+	var sl = []string{"Mumbai", "Delhi", "GOA"}
+	fmt.Printf("%T \n", sl)
+	
+	// Map
+	var ma = map[string]float64{
+		"price": 12345.1,
+		"total": 67890.2,
+	}
+	fmt.Printf("%T \n", ma)
 }
