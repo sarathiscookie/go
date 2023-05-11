@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello")
+	/***************  Variable & Data Type *************/
+	/*fmt.Println("Hello")
 
 	// Example 1
 	var a int = 4
@@ -94,7 +95,28 @@ func main() {
 	// TODO: Later 
 
 	// Function Type
-	fmt.Printf("%T \n", base)
+	fmt.Printf("%T \n", base)*/
+
+    /*********************** Operators *********************/
+	// Arithmetic
+	ar1, ar2 := 4, 2
+	tar := (ar1 + ar2) * (ar1 - ar2) / 2
+	fmt.Println(tar)
+
+	// Assignment
+	as1, as2 := 5, 6
+	as1 += as2
+	as1 *= 10
+	as1 -= 2
+	as1 /= 2
+	as1 %= 2
+	fmt.Println(as1)
+
+	// Comparison
+	cm1, cm2 := 10, 10
+	fmt.Println(cm1 == cm2)
+	fmt.Println(cm1 != cm2)
+	fmt.Println(cm1 == 10 && cm2 < 11)
 }
 
 func base() {
