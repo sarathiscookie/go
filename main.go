@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 	/***************  Variable & Data Type *************/
@@ -99,7 +102,7 @@ func main() {
 
     /*********************** Operators *********************/
 	// Arithmetic
-	ar1, ar2 := 4, 2
+	/*ar1, ar2 := 4, 2
 	tar := (ar1 + ar2) * (ar1 - ar2) / 2
 	fmt.Println(tar)
 
@@ -116,7 +119,27 @@ func main() {
 	cm1, cm2 := 10, 10
 	fmt.Println(cm1 == cm2)
 	fmt.Println(cm1 != cm2)
-	fmt.Println(cm1 == 10 && cm2 < 11)
+	fmt.Println(cm1 == 10 && cm2 < 11)*/
+
+	// Converting numeric type
+	var num1 int = 5
+	var num2 float64 = 5.5
+	fmt.Println(num1 + int(num2))
+
+	var num3 int = 6
+	var num4 int16 = 10
+	fmt.Println(num3 + int(num4))
+
+	// Converting string to number
+	var str1 string = "3.14"
+	var conv1, err = strconv.ParseFloat(str1, 64)
+	_ = err
+	fmt.Printf("%T \n", conv1)
+
+	// Converting number to string
+	var num5 int = 5
+	var conv2 = strconv.Itoa(num5)
+	fmt.Printf("%T \n", conv2)
 }
 
 func base() {
