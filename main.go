@@ -122,6 +122,7 @@ func main() {
 	fmt.Println(cm1 == 10 && cm2 < 11)*/
 
 	// Converting numeric type
+	// Example 1
 	var num1 int = 5
 	var num2 float64 = 5.5
 	fmt.Println(num1 + int(num2))
@@ -136,10 +137,15 @@ func main() {
 	_ = err
 	fmt.Printf("%T \n", conv1)
 
-	// Converting number to string
+	// Converting integer to string (Itoa)
 	var num5 int = 5
 	var conv2 = strconv.Itoa(num5)
 	fmt.Printf("%T \n", conv2)
+
+	// Converting integer to string (Atoi)
+	var at, error = strconv.Atoi("50") 
+	_ = error
+	fmt.Printf("%T \n", at)
 }
 
 func base() {
