@@ -146,6 +146,22 @@ func main() {
 	var at, error = strconv.Atoi("50") 
 	_ = error
 	fmt.Printf("%T \n", at)
+
+	// Underlying type
+	type speed uint
+
+	var s1 speed = 10
+	var s2 speed = 10
+
+	fmt.Println(s1 + s2)
+	fmt.Printf("%T \n %T \n", s1, s1)
+
+	// Add other type in to underline type
+	var sx uint = 20
+	var s3 speed = speed(sx)
+
+	fmt.Printf("%T \n", s3)
+	fmt.Println(s2 + s3)
 }
 
 func base() {
