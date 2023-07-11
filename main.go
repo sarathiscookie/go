@@ -14,8 +14,14 @@ import (
 	return a * b
 }*/
 
-func swap(a, b string) (string, string) {
+/*func swap(a, b string) (string, string) {
 	return a, b
+}*/
+
+func named(x int) (a, b int) {
+	a = x * 5
+	b = x + 5
+	return 
 }
 
 func main() {
@@ -25,6 +31,7 @@ func main() {
 	fmt.Println("Math Pi", math.Pi)*/
 	/*fmt.Println("Sum:", sum(4, 5))*/
 	/*fmt.Println("Multiply:", multiply(4, 5))*/
-	a, b := swap("hello", "world")
-	fmt.Println(a, b)
+	/*a, b := swap("hello", "world")
+	fmt.Println(a, b)*/
+	fmt.Println(named(4))
 }
