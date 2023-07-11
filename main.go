@@ -2,13 +2,18 @@ package main
 
 import (
 	"fmt"
-	"math"
-	"time"
+	/*"math"
+	"time"*/
 )
 
+func sum(a int, b int) int {
+	return a + b
+}
+
 func main() {
-	fmt.Println("Math Round", math.Round(10.5))
+	/*fmt.Println("Math Round", math.Round(10.5))
 	fmt.Println("Month", time.Now().Month())
 	fmt.Println("Math Sqrt", math.Sqrt(2*2))
-	fmt.Println("Math Pi", math.Pi)
+	fmt.Println("Math Pi", math.Pi)*/
+	fmt.Println("Sum:", sum(4, 5))
 }
