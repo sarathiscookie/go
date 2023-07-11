@@ -6,8 +6,12 @@ import (
 	"time"*/
 )
 
-func sum(a int, b int) int {
+/*func sum(a int, b int) int {
 	return a + b
+}*/
+
+func multiply(a, b int) int {
+	return a * b
 }
 
 func main() {
@@ -15,5 +19,6 @@ func main() {
 	fmt.Println("Month", time.Now().Month())
 	fmt.Println("Math Sqrt", math.Sqrt(2*2))
 	fmt.Println("Math Pi", math.Pi)*/
-	fmt.Println("Sum:", sum(4, 5))
+	/*fmt.Println("Sum:", sum(4, 5))*/
+	fmt.Println("Multiply:", multiply(4, 5))
 }
