@@ -6,7 +6,7 @@ import (
 	"time"*/
 )
 
-var i, j int = 1, 2
+/*var i, j int = 1, 2*/
 /*func sum(a int, b int) int {
 	return a + b
 }*/
@@ -26,8 +26,8 @@ var i, j int = 1, 2
 }*/
 
 func main() {
-	var c, python, java = true, false, "no!"
-	fmt.Println(i, j, c, python, java)
+	/*var c, python, java = true, false, "no!"
+	fmt.Println(i, j, c, python, java)*/
 	/*fmt.Println("Math Round", math.Round(10.5))
 	fmt.Println("Month", time.Now().Month())
 	fmt.Println("Math Sqrt", math.Sqrt(2*2))
@@ -37,4 +37,8 @@ func main() {
 	/*a, b := swap("hello", "world")
 	fmt.Println(a, b)*/
 	/*fmt.Println(named(4))*/
+	var i, j int = 1, 2
+	k := 3
+	c, python, java := true, false, "no!"
+	fmt.Println(i, j, k, c, python, java)
 }
